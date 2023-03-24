@@ -24,11 +24,16 @@ export default function Home() {
         <ImageList cols={1}>
           {itemData.map((item) => (
             <ImageListItem key={item.img}>
-              <img
-                src={`${item.img}?w=248&fit=crop&auto=format`}
-                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+              <Image
+                src={item.img}
                 alt={item.title}
-                loading="lazy"
+                width={700}
+                height={475}
+                sizes="100vw"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                }}
               />
               <ImageListItemBar
                 title={item.title}
